@@ -1,0 +1,33 @@
+  <!DOCTYPE html>
+<head>
+    <!-- Encoded viewport checks for screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Maze</title>
+    
+    <!-- Links to CSS file -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div id="start-screen">
+        <!-- Title -->
+        <h1>Welcome to the Maze!</h1>
+        <!-- Instructions -->
+        <p>In this story, you will make choices to progress along the paths. If you wish to stop at any point, type "stop" to end the game.</p>
+        <!-- Starts when clicked -->
+        <button id="start-btn">Start Game</button>
+    </div>
+
+    <!-- Story container-->
+    <div id="story-container" class="hidden">
+        <div id="story-text"></div>
+        <!-- User input box -->
+        <input type="text" id="user-choice" placeholder="  " />
+        <!-- Submit button -->
+        <button id="submit-choice-btn">Submit</button>
+    </div>
+
+    <!-- Links the javascript file -->
+    <script src="script.js"></script>
+</body>
+</html>

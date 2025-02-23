@@ -1,0 +1,70 @@
+/* Imported font from Google Fonts, is licensed under the OFL. */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+/* Hidden class, allows screens to be hidden when needed */
+.hidden {
+    display: none;
+}
+
+/* Story container start sizing */
+#start-screen, #story-container {
+    padding: 15px;
+    max-width: 600px;
+    width: 100%;
+    background-color: #2e4634;
+}
+
+/* Buttons font, size, and color */
+button {
+    padding: 15px;
+    margin-top: 10px;
+    color: black;
+    background-color: #d4af37;
+    font-size: 16px;
+    border: none;
+    cursor: pointer; 
+    font-family: 'Silkscreen', sans-serif;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #b38b2d;
+    
+}
+
+/* User input box styling */
+input[type="text"] {
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    background-color: #3d5a45;
+    color: #eae7dc;
+    font-family: 'Silkscreen', sans-serif;
+
+}
+
+/* Main heading, font, color, and size */
+h1 {
+    color: #d4af37;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-family: 'Silkscreen', sans-serif;
+
+}
+
+/* Main contents, centers and sets main font and font color */
+body {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1b3b28;
+    color: #eae7dc;
+    font-family: 'Silkscreen', sans-serif;
+}
