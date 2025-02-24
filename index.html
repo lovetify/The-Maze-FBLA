@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <!-- Encoded viewport checks for screen size -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +35,24 @@
         <button id="audioPlayPauseBtn">Play</button>
         <button id="audioMuteBtn">Mute</button>
         <input type="range" id="audioVolumeSlider" min="0" max="1" step="0.01" value="0.5">
+        <!-- Help Button -->
+    <button id="help-btn">Help</button>
+
+    <!-- Help Information (hidden initially before clicked) -->
+    <div id="help-info">
+        <h2>How to Play</h2>
+        <p>1. Follow the prompts on the screen.</p>
+        <p>2. Enter your responses in the input field.</p>
+        <p>3. Make choices and progress through the story.</p>
+        <p>4. Have fun and enjoy the adventure!</p>
+        
+        <h3>Creators</h3>
+        <p>This game was created by Emma Nguyen, Ellie Solovyev and Daniel Nguyen.</p>
+        <p>Thanks for playing!</p>
     </div>
+</style>
+</head>
+
     <!-- Links the javascript file -->
     <script src="script.js"></script>
 </body>

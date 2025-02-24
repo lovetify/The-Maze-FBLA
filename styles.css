@@ -1,18 +1,10 @@
-/* Imported font from Google Fonts, is licensed under the OFL. */
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-
-
-/* Hidden class, allows screens to be hidden when needed */
-.hidden {
-    display: none;
-}
-
 /* Story container start sizing */
 #start-screen, #story-container {
     padding: 15px;
     max-width: 600px;
     width: 100%;
     background-color: #2e4634;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Buttons font, size, and color */
@@ -30,7 +22,6 @@ button {
 /* Button hover effect */
 button:hover {
     background-color: #b38b2d;
-    
 }
 
 /* User input box styling */
@@ -45,7 +36,6 @@ input[type="text"] {
     background-color: #3d5a45;
     color: #eae7dc;
     font-family: 'Silkscreen', sans-serif;
-
 }
 
 /* Main heading, font, color, and size */
@@ -54,7 +44,6 @@ h1 {
     font-size: 32px;
     margin-bottom: 10px;
     font-family: 'Silkscreen', sans-serif;
-
 }
 
 /* Main contents, centers and sets main font and font color */
@@ -73,30 +62,46 @@ body {
     color: #eae7dc;
     font-family: 'Silkscreen', sans-serif;
     transition: background 0.75s ease-in-out;
-    audio {
-        padding: 10px 20px;
-        margin: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        color: white;
-        border: none;
-        border-radius: 5px;
-    }
+}
 
-    
-    #audio-controls {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 10px;
-        border-radius: 5px;
-    }
-    
-    #audioVolumeSlider {
-        width: 100px;
-        background: #ccc;
-    }
+audio {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#audio-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#audioVolumeSlider {
+    width: 100px;
+    background: #ccc;
+}
+
+#help-info {
+    display: none; /* Initially hidden before clicked */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#help-info h2, #help-info h3 {
+    color: #00eeff;
 }
 
 .hidden {

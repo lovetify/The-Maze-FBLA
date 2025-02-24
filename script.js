@@ -17,7 +17,19 @@ function showStory(text) {
     const storyText = document.getElementById("story-text");
     storyText.innerHTML = text;
 }
+// Get the help button and the help info
+const helpBtn = document.getElementById('help-btn');
+const helpInfo = document.getElementById('help-info');
 
+// Add event listener to the help button
+helpBtn.addEventListener('click', function() {
+    // User can toggle the visibility of the help info section
+    if (helpInfo.style.display === 'none' || helpInfo.style.display === '') {
+        helpInfo.style.display = 'block';
+    } else {
+        helpInfo.style.display = 'none';
+    }
+});
 // Updated Audio Buttons
 const audioPlayPauseBtn = document.getElementById("audioPlayPauseBtn");
 const audioMuteBtn = document.getElementById("audioMuteBtn");
