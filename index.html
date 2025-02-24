@@ -26,7 +26,15 @@
         <!-- Submit button -->
         <button id="submit-choice-btn">Submit</button>
     </div>
-
+    <div id="audio-controls">
+        <audio id="audio" loop>
+            <source src="audio/background_audio.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="audioPlayPauseBtn">Play</button>
+        <button id="audioMuteBtn">Mute</button>
+        <input type="range" id="audioVolumeSlider" min="0" max="1" step="0.01" value="0.5">
+    </div>
     <!-- Links the javascript file -->
     <script src="script.js"></script>
 </body>

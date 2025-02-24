@@ -73,6 +73,30 @@ body {
     color: #eae7dc;
     font-family: 'Silkscreen', sans-serif;
     transition: background 0.75s ease-in-out;
+    audio {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    
+    #audio-controls {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    #audioVolumeSlider {
+        width: 100px;
+        background: #ccc;
+    }
 }
 
 .hidden {

@@ -10,11 +10,54 @@ function hideElement(id) {
 function showElement(id) {
     document.getElementById(id).classList.remove("hidden");
 }
+// Declare Background Audio Loop
+const startBtn = document.getElementById("start-btn");
 
 function showStory(text) {
     const storyText = document.getElementById("story-text");
     storyText.innerHTML = text;
 }
+
+// Updated Audio Buttons
+const audioPlayPauseBtn = document.getElementById("audioPlayPauseBtn");
+const audioMuteBtn = document.getElementById("audioMuteBtn");
+const audioVolumeSlider = document.getElementById("audioVolumeSlider");
+
+// Start Game
+startBtn.addEventListener("click", () => {
+    startScreen.style.display = "none";
+    storyContainer.classList.remove("hidden");
+    audio.play();
+    audioPlayPauseBtn.textContent = "Pause";
+});
+
+// Play/Pause functionality
+audioPlayPauseBtn.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+        audioPlayPauseBtn.textContent = "Pause";
+    } else {
+        audio.pause();
+        audioPlayPauseBtn.textContent = "Play";
+    }
+});
+
+// Mute/Unmute functionality
+audioMuteBtn.addEventListener("click", () => {
+    audio.muted = !audio.muted;
+    audioMuteBtn.textContent = audio.muted ? "Unmute" : "Mute";
+});
+
+// Volume control with smooth color fill effect
+audioVolumeSlider.addEventListener("input", () => {
+    audio.volume = audioVolumeSlider.value;
+    let percentage = audioVolumeSlider.value * 100;
+});
+
+// Auto-update button text when audio ends
+audio.addEventListener("ended", () => {
+    audioPlayPauseBtn.textContent = "Play";
+});
 
 // Core game functions
 function startStory() {
@@ -113,17 +156,28 @@ function isValidChoice(choice) {
     }
     return false; // Default case, invalid choice
 }
+// Background change functions based on users choices
 function changeBackground(step) {
     let body = document.body;
 
-    if (step === "left-path" || step === "myst-door" || step === "locked-door") {
+    if (step === "left-path" || step === "locked-door") {
         body.style.backgroundImage = "url('images/mystery_door.jpg')";
     } else if (step === "right-path") {
         body.style.backgroundImage = "url('images/creature.jpg')";
     } else if (step === "died") {
-        body.style.backgroundImage = "url('images/died.jpg')";  // Background for when the player dies
-    } else if (step === "double-doors") {
-        body.style.backgroundImage = "url('images/doors.jpg')"; 
+        body.style.backgroundImage = "url('images/died.jpg')";  // Background for when the player dies 
+    } else if (step === "straight-path") {
+        body.style.backgroundImage = "url('images/injured.jpg')"; 
+    } else if (step === "myst-door") {
+        body.style.backgroundImage = "url('images/dark_room.jpg')"; 
+    } else if (step === "escaped") {
+        body.style.backgroundImage = "url('images/escaped_screen.jpg')"; 
+    } else if (step === "normal-door" || step === "riddle") {
+        body.style.backgroundImage = "url('images/riddle_door.jpg')"; 
+    } else if (step === "double-doors" || step === "choose-door") {
+        body.style.backgroundImage = "url('images/double_doors.jpg')"; 
+    } else if (step === "second-door") {
+        body.style.backgroundImage = "url('images/second_door.jpg')"; 
     } else {
         body.style.backgroundImage = "url('images/hedge.jpg')"; // Default background
     }
@@ -166,10 +220,11 @@ function makeDecision(choice) {
                 showStory("You return to the starting point of the maze. Where will you go now? 'Right', or 'straight'?");
                 currentStep = "start";
             }
-        
+
         } else if (currentStep === "myst-door") {
             if (choice === "enter") {
                 showStory("You enter the room and as you look around, spotting a treasure map. You follow it to find a hidden exit. You exit the maze to find yourself back where you started before the maze came along.")
+                currentStep = "escaped"
                 showWinRestartOption();
             } else if (choice === "leave") {
                 showStory("You turn back and end up where you started.")
@@ -206,6 +261,7 @@ function makeDecision(choice) {
             if (choice === "door 1") {
                 showStory("You unlock the first door, and as you open it, you find yourself consumed by the darkness. Unfortunately you die.");
                 showLoseRestartOption();
+                currentStep = "died";
             } else if (choice === "door 2") {
                 showStory("You unlock the second door to reveal a long hallway. Looking towards the end of the hallway, you see a figure, and as you open the door wider, the shadow runs away. Do you want to 'chase it' or 'leave'?");
                 currentStep = "second-door";
@@ -214,6 +270,7 @@ function makeDecision(choice) {
             if (choice === "chase it") {
                 showStory("You chase the figure for a while, but just as you're about to catch up to the mysterious shadow, it disappears. As you look around, you find that you are no longer in the maze.");
                 showWinRestartOption();
+                currentStep = "escaped";
             } else if (choice === "leave") {
                 showStory("You return to the starting point of the maze. Where will you go now?");
                 currentStep = "start";
@@ -257,9 +314,11 @@ function makeDecision(choice) {
             if (choice === "a coin") {
                 showStory("You answered correctly! The door opens before you to a dark forest, as you enter, you realize you are no longer in the maze, the door shuts behind you as you exit.");
                 showWinRestartOption();
+                currentStep = "escaped";
             } else if (choice !== "a coin") {
                 showStory("A trapdoor opens under you, and you fall to your death. You Lose!");
                 showLoseRestartOption();
+                currentStep = "died";
             }
         }
         changeBackground(currentStep);
@@ -272,7 +331,9 @@ function endGame() {
     showElement("start-screen");
     document.getElementById("user-choice").value = ""; // Clears input
 }
-
+function wonGame() {
+    changeBackground("escaped");
+}
 function restartGame() {
     hideElement("story-container");
     showElement("start-screen");
