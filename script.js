@@ -113,7 +113,25 @@ function isValidChoice(choice) {
     }
     return false; // Default case, invalid choice
 }
+function changeBackground(step) {
+    let body = document.body;
 
+    if (step === "left-path" || step === "myst-door" || step === "locked-door") {
+        body.style.backgroundImage = "url('images/mystery_door.jpg')";
+    } else if (step === "right-path") {
+        body.style.backgroundImage = "url('images/creature.jpg')";
+    } else if (step === "died") {
+        body.style.backgroundImage = "url('images/died.jpg')";  // Background for when the player dies
+    } else if (step === "double-doors") {
+        body.style.backgroundImage = "url('images/doors.jpg')"; 
+    } else {
+        body.style.backgroundImage = "url('images/hedge.jpg')"; // Default background
+    }
+
+    body.style.backgroundSize = "cover"; 
+    body.style.backgroundPosition = "center";
+    body.style.backgroundRepeat = "no-repeat";
+}
 // Scenes
 function makeDecision(choice) {
     // Start of the maze
@@ -167,11 +185,14 @@ function makeDecision(choice) {
                 currentStep = "double-doors";
             } else { // Check if weapon is false
                 showStory("You try your best to fight the creature, but after getting nowhere, you tragically die.");
+                currentStep = "died";
+                changeBackground("died");
                 showLoseRestartOption();
             }
         } else if (choice === "run away") {
             showStory("You run away, but the maze seems even more confusing now. Where will you go next? 'Left' or 'straight'?");
             currentStep = "start";
+            changeBackground("start");
         }
         } else if (currentStep === "double-doors") {
             if (choice === "choose a door") {
@@ -241,6 +262,7 @@ function makeDecision(choice) {
                 showLoseRestartOption();
             }
         }
+        changeBackground(currentStep);
 }
 
 // End game functions 
@@ -257,6 +279,7 @@ function restartGame() {
     document.getElementById("user-choice").disabled = false;
     document.getElementById("submit-choice-btn").disabled = false;
     document.getElementById("user-choice").value = ""; // Clear the input
+    changeBackground("start");
 }
 
 // Event listeners
