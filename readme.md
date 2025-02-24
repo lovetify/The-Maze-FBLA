@@ -26,14 +26,17 @@ Welcome to The Maze! This is our 2024-2025 FBLA Introduction to Programming Proj
 * Visual Studios
 * Photoshop
 * Github
+* Open Art AI
 * Javascript
 * HTML
 * CSS
 
-## Font Credits
+## Credits
 The font **Silkscreen** used in this project is provided by [Google Fonts](https://fonts.google.com/) and is licensed under the [Open Font License (OFL)](https://scripts.sil.org/OFL).
+The audio **Action** by Pixabay Music used in this project is provided by (https://pixabay.com/music/rock-action-255730/) and is licensed under Pixabay License (https://pixabay.com/service/terms/).
 
 ## Game Assets
-All game assets were created by Emma Nguyen in Photoshop.
+Game assets were created by Emma Nguyen in Photoshop.
+Backgrounds used in every screen were created with Open Art AI.
 ## Contact
 For any questions please email emmanguyen0915@gmail.com!
