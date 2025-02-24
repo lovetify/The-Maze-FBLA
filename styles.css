@@ -1,6 +1,6 @@
 /* Imported font from Google Fonts, is licensed under the OFL. */
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-background-image: url('maze.jpg');
+background-image: url('hedge.jpg');
 
 /* Hidden class, allows screens to be hidden when needed */
 .hidden {
@@ -66,7 +66,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #1b3b28;
-    background-image: url('maze.jpg');
+    background-image: url('hedge.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
