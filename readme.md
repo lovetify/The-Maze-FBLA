@@ -35,3 +35,5 @@ The font **Silkscreen** used in this project is provided by [Google Fonts](https
 
 ## Game Assets
 All game assets were created by Emma Nguyen in Photoshop.
+## Contact
+For any questions please email emmanguyen0915@gmail.com!
