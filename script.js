@@ -382,8 +382,16 @@ function restartGame() {
     document.getElementById("submit-choice-btn").disabled = false;
     document.getElementById("user-choice").value = ""; // Clear the input
     changeBackground("start");
+    inventory = [];
+    updateInventory();
 }
 
 // Event listeners
 document.getElementById("start-btn").addEventListener("click", startStory);
 document.getElementById("submit-choice-btn").addEventListener("click", handleChoice);
+document.getElementById("user-choice").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        handleChoice();
+    }
+});
