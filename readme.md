@@ -4,7 +4,7 @@ Welcome to The Maze! This is our 2024-2025 FBLA Introduction to Programming Proj
 ![the maze](https://github.com/user-attachments/assets/2073008b-1065-4721-944d-0bb57831ce33)
 
  ## How to Run #1
-* https://github.com/lovetify/The-Maze-FBLA.git
+https://github.com/lovetify/The-Maze-FBLA.git <-- OPEN THIS LINK
 1. Click the github link, and click on the green "<> Code" button.
 2. Download the ZIP file and open it in an IDE of choice, we will be using Visual Studio.
 3. Unzip the folder you just downloaded.
