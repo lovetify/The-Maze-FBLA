@@ -23,6 +23,7 @@ button {
 button:hover {
     background-color: #b38b2d;
 }
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 /* User input box styling */
 input[type="text"] {
