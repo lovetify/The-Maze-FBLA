@@ -1,8 +1,6 @@
 # The Maze
 Welcome to The Maze! This is our 2024-2025 FBLA Introduction to Programming Project. The Maze is a user-interactive story that accepts user input to depict what happens next in the story. The user can simply type "stop" throughout the story to end the story. Our program has multiple endings to whether the user wins or loses. Throughout the story, users can gain items in their inventory based on the choices they make.
 
-![the maze](https://github.com/user-attachments/assets/2073008b-1065-4721-944d-0bb57831ce33)
-
  ## How to Run #1
 https://github.com/lovetify/The-Maze-FBLA.git <-- OPEN THIS LINK
 1. Click the github link, and click on the green "<> Code" button.
@@ -43,3 +41,4 @@ Game assets were created by Emma Nguyen in Photoshop.
 Backgrounds used in every screen were created with Open Art AI.
 ## Contact
 For any questions please email emmanguyen0915@gmail.com!
+![the maze](https://github.com/user-attachments/assets/2073008b-1065-4721-944d-0bb57831ce33)
