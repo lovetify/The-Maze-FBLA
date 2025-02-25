@@ -297,6 +297,7 @@ function makeDecision(choice) {
             currentStep = "helped-person";
             key = true;
             weapon = true;
+            
         } else if (choice === "keep going") {
             showStory("You find an ominously normal looking door, and on the door is a riddle, do you 'answer' or 'leave'?");
             currentStep = "normal-door";
@@ -307,9 +308,11 @@ function makeDecision(choice) {
             if (choice === "continue") {
                 showStory("You find a normal looking door, and on the door is a riddle, do you 'answer' or 'leave'?");
                 currentStep = "normal-door"
+                alert("You now have a key and weapon!");
             } else if (choice === "go back") {
                 showStory("You return to the starting point of the maze. Where will you go now? 'Right' or 'left'?");
                 currentStep = "start";
+                alert("You now have a key and weapon!");
             }
         }
         // Normal door with riddle

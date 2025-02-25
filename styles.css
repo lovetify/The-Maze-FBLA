@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 /* Story container start sizing */
 #start-screen, #story-container {
     padding: 15px;
@@ -103,6 +105,47 @@ audio {
 
 #help-info h2, #help-info h3 {
     color: #00eeff;
+}
+#game-container {
+    display: flex; /* Ensures side-by-side layout */
+    align-items: flex-start; /* Aligns both sections at the top */
+    justify-content: center; /* Centers content on the page */
+    width: 90vw;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 5vh;
+    gap: 20px; /* Space between inventory and story */
+}
+
+/* Inventory Container */
+#inventory-container {
+    position: relative; /* Allows items to be placed inside */
+    width: 250px; /* Matches inventory box size */
+    height: auto;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* Inventory Background (JPG) */
+#inventory-bg {
+    width: 100%; /* Ensures it fills the container */
+    display: block;
+}
+
+/* Inventory Items */
+.inventory-item {
+    position: absolute; /* Allows precise placement inside the inventory */
+    width: 50px; /* Adjust based on the inventory box */
+}
+
+/* Adjusting item positions inside the inventory */
+#pixel-sword {
+    top: 40px; /* Adjust position relative to inventory box */
+    left: 50px;
+}
+
+#pixel-key {
+    top: 100px;
+    left: 70px;
 }
 
 .hidden {
