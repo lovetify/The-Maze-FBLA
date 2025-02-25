@@ -15,7 +15,8 @@ Welcome to The Maze! This is our 2024-2025 FBLA Introduction to Programming Proj
 8. The program should open in a new browser and you are all set to play!
 ## How to Run #2 (Easier Way)
 1. If you have the Github software you could go to our Project link, press the green Code button and open with github desktop.
-2. From there you can open the code in Visual Studio or any IDE of your choice.
+2. From there you can clone the respository, and open in an IDE of choice.
+3. Right click the HTML file and open with Live Server if the live server extension is installed.
  ## Directions to play:
  To play The Maze click the "Start" button to begin your journey. Each screen you will presented with 2-3 choices to make. Type your choice into the input box and click "Submit" to progress. Make decisions wisely. Some paths may lead to victory, while others could lead to defeat! To end the game, type "stop". Good luck!
 
