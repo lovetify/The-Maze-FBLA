@@ -105,6 +105,9 @@ function handleChoice() {
     // Ends the game if "stop" is typed
     if (userChoice === "stop") {
         endGame();
+        changeBackground("start");
+        inventory = []; // Clear inventory
+        updateInventory();
         return;
     }
 
