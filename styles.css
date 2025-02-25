@@ -65,7 +65,47 @@ body {
     font-family: 'Silkscreen', sans-serif;
     transition: background 0.75s ease-in-out;
 }
+/* INVENTORY STYLING */
+#inventory-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(46, 70, 52, 0.9);
+    color: #eae7dc;
+    padding: 15px;
+    border-radius: 8px;
+    width: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
 
+/* Inventory Title */
+#inventory-container h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-decoration: underline;
+    color: #d4af37;
+}
+
+/* Inventory List */
+#inventory-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#inventory-list li {
+    padding: 8px;
+    background: #d4af37;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* AUDIO BUTTONS STYLING */
 audio {
     padding: 10px 20px;
     margin: 10px;
@@ -105,16 +145,7 @@ audio {
 #help-info h2, #help-info h3 {
     color: #00eeff;
 }
-#game-container {
-    display: flex; /* Ensures side-by-side layout */
-    align-items: flex-start; /* Aligns both sections at the top */
-    justify-content: center; /* Centers content on the page */
-    width: 90vw;
-    max-width: 1200px;
-    margin: auto;
-    padding-top: 5vh;
-    gap: 20px; /* Space between inventory and story */
-}
+
 .hidden {
     display: none;
 }

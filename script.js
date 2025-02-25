@@ -2,6 +2,10 @@ let currentStep = "start";
 // Declare inventory variables
 var key = false;
 var weapon = false;
+
+// List for Inventory
+let inventory = [];
+
 // HTML Link process
 function hideElement(id) {
     document.getElementById(id).classList.add("hidden");
@@ -70,7 +74,24 @@ audioVolumeSlider.addEventListener("input", () => {
 audio.addEventListener("ended", () => {
     audioPlayPauseBtn.textContent = "Play";
 });
+// Function for inventory
+function updateInventory() {
+    const inventoryList = document.getElementById("inventory-list");
+    inventoryList.innerHTML = ""; // Clear previous inventory items
 
+    inventory.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = item;
+        inventoryList.appendChild(li);
+    });
+}
+// Avoids inventory duplicates, pushes list
+function addToInventory(item) {
+    if (!inventory.includes(item)) { // Avoid duplicates
+        inventory.push(item);
+        updateInventory();
+    }
+}
 // Core game functions
 function startStory() {
     showElement("story-container");
@@ -250,6 +271,7 @@ function makeDecision(choice) {
             if (weapon === true) { // Checks if weapon is true
                 showStory("You bravely fight the creature and win! You spot a chest and open it to find a key, and after looking around you find 2 doors that match the key you just found. Do you want to 'choose a door' or 'leave'?");
                 currentStep = "double-doors";
+                addToInventory("Key");
             } else { // Check if weapon is false
                 showStory("You try your best to fight the creature, but after getting nowhere, you tragically die.");
                 currentStep = "died";
@@ -297,7 +319,8 @@ function makeDecision(choice) {
             currentStep = "helped-person";
             key = true;
             weapon = true;
-            
+            addToInventory("Key");
+            addToInventory("Sword");
         } else if (choice === "keep going") {
             showStory("You find an ominously normal looking door, and on the door is a riddle, do you 'answer' or 'leave'?");
             currentStep = "normal-door";
