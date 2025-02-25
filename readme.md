@@ -11,6 +11,7 @@ https://github.com/lovetify/The-Maze-FBLA.git <-- OPEN THIS LINK
 6. If you do not already have the "Live Server" extension you're gonna wanna download it in the extensions tab on the left hand side with the 4 boxes icon.
 7. Once downloaded, on the left hand side right click the "index.html" file and click "Open with Live Server"
 8. The program should open in a new browser and you are all set to play!
+
 ## How to Run #2 (Easier Way)
 1. If you have the Github software you could go to our Project link, press the green Code button and open with github desktop.
 2. From there you can clone the respository, and open in an IDE of choice.
