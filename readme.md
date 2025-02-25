@@ -3,7 +3,7 @@ Welcome to The Maze! This is our 2024-2025 FBLA Introduction to Programming Proj
 
 ![the maze](https://github.com/user-attachments/assets/2073008b-1065-4721-944d-0bb57831ce33)
 
- ## How to Run
+ ## How to Run #1
 * https://github.com/lovetify/The-Maze-FBLA.git
 1. Click the github link, and click on the green "<> Code" button.
 2. Download the ZIP file and open it in an IDE of choice, we will be using Visual Studio.
@@ -13,7 +13,9 @@ Welcome to The Maze! This is our 2024-2025 FBLA Introduction to Programming Proj
 6. If you do not already have the "Live Server" extension you're gonna wanna download it in the extensions tab on the left hand side with the 4 boxes icon.
 7. Once downloaded, on the left hand side right click the "index.html" file and click "Open with Live Server"
 8. The program should open in a new browser and you are all set to play!
-
+## How to Run #2 (Easier Way)
+1. If you have the Github software you could go to our Project link, press the green Code button and open with github desktop.
+2. From there you can open the code in Visual Studio or any IDE of your choice.
  ## Directions to play:
  To play The Maze click the "Start" button to begin your journey. Each screen you will presented with 2-3 choices to make. Type your choice into the input box and click "Submit" to progress. Make decisions wisely. Some paths may lead to victory, while others could lead to defeat! To end the game, type "stop". Good luck!
 
