@@ -246,11 +246,15 @@ function makeDecision(choice) {
             if (key === true) { // Check if key is true
                 showStory("You try the key you got, and the lock clicks as you turn the key. The door unlocks! You open it to find a dark and endless room. Do you want to 'enter' it or 'leave'?")
                 currentStep = "myst-door";
-            } else {
+            } else if (key === false) {
                 showStory("After trying to open the door as best you can, you find it to be locked. Perhaps there is a key you can get to open it? You have no choice but to 'go back'.");
                 currentStep = "locked-door";
-            }
-        }        
+            } 
+        } else {
+            showStory("You change your mind and go back to the starting point of the maze. Will you now go 'right', or 'straight'?")
+            currentStep = "start";
+        }
+
         } else if (currentStep === "locked-door") {
             if (choice === "go back") {
                 showStory("You return to the starting point of the maze. Where will you go now? 'Right', or 'straight'?");
@@ -266,7 +270,7 @@ function makeDecision(choice) {
                 showStory("You turn back and end up where you started.")
                 currentStep = "start";
             }    
-        }
+            }
     
     // Right path is chosen
     else if (currentStep === "right-path") {
@@ -275,7 +279,7 @@ function makeDecision(choice) {
                 showStory("You bravely fight the creature and win! You spot a chest and open it to find a key, and after looking around you find 2 doors that match the key you just found. Do you want to 'choose a door' or 'leave'?");
                 currentStep = "double-doors";
                 addToInventory("Key");
-            } else { // Check if weapon is false
+            } else { 
                 showStory("You try your best to fight the creature, but after getting nowhere, you tragically die.");
                 currentStep = "died";
                 changeBackground("died");
@@ -286,7 +290,8 @@ function makeDecision(choice) {
             currentStep = "start";
             changeBackground("start");
         }
-        } else if (currentStep === "double-doors") {
+    }
+         else if (currentStep === "double-doors") {
             if (choice === "choose a door") {
                 showStory("You look between the doors, contemplating which one to open...will it be 'door 1' or 'door 2'?");
                 currentStep = "choose-door"
